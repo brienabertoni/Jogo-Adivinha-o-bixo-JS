@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./imagens/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Fixar a imagem de fundo */
+}
+
+.container {
+    
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px; /* Adicione um pouco de padding para evitar que o conteúdo toque as bordas */
+    position: relative;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+     margin: 60px auto 20px; /* Adicione um pouco de padding para evitar que o conteúdo toque as bordas */
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+header img {
+    max-width: 200px; /* Ajuste o tamanho conforme necessário */
+    margin-top: 0px; /* Ajuste para mover a logo para cima */
+}
+.video-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+#home, #classSelection, #question1, #question1-yes, #question1-yes-no, #question1-no, #question1-no-yes, #question1-no-yes-no, #question1-no-no, #question1-no-no-no, #result-raposa, #result-girafa, #result-canguru, #result-urso, #result-baleia, #result-morcego, #result-impossivel, #result-classes {
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    border-color: white;
+}
+.backButton {
+
+    top: 80px; /* Posição em relação ao topo da página */
+    right: 30%; /* Posição em relação à direita da página */
+    padding: 6px 8px 5px; /* Ajuste de padding para melhorar o aspecto visual */
+    font-size: 14px;
+    background-color: rgb(216, 144, 11);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ajuste para garantir que o botão fique acima de outros elementos */
+    border-radius: 10px;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f0f0f02c; 
+}
+button.optionButton, button.backButton {
+    width: 150px;
+}

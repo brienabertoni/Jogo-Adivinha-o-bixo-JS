@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubra o Animal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="./imagens/nome jogo.svg" alt="Logo do Jogo" width="300">
+        </header>
+        <div id="home">
+            <h1>Descubra o Animal</h1>
+            <button id="startButton">Começar</button>
+        </div>
+        <div id="classSelection" style="display: none;">
+            <h2>Qual é a classe dos seus animais?</h2>
+            <button class="optionButton" data-value="Mamifero" data-next="question1">Mamífero</button>
+            <button class="optionButton" data-value="Aves" data-next="question-aves">Aves</button>
+            <button class="optionButton" data-value="Repteis" data-next="question-repteis">Répteis</button>
+            <button class="optionButton" data-value="Peixes" data-next="question-peixes">Peixes</button>
+            <button class="backButton" data-prev="home">Voltar</button>
+        </div>
+        <div id="question1" style="display: none;">
+            <h2>É quadrúpede?</h2>
+            <button class="optionButton" data-value="yes" data-next="question2-yes">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question2-no">Não</button>
+            <button class="backButton" data-prev="classSelection">Voltar</button>
+        </div>
+        <div id="question2-yes" style="display: none;">
+            <h2>É carnívoro?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-raposa">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question3-no">Não</button>
+            <button class="backButton" data-prev="question1">Voltar</button>
+        </div>
+        <div id="question3-no" style="display: none;">
+            <h2>É onívoro?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-guaxinim">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-impossivel">Não</button>
+            <button class="backButton" data-prev="question2-yes">Voltar</button>
+        </div>
+        <div id="question2-no" style="display: none;">
+            <h2>É bípede?</h2>
+            <button class="optionButton" data-value="yes" data-next="question3-yes">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-impossivel">Não</button>
+            <button class="backButton" data-prev="question1">Voltar</button>
+        </div>
+        <div id="question3-yes" style="display: none;">
+            <h2>É herbívoro?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-canguru">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-impossivel">Não</button>
+            <button class="backButton" data-prev="question2-no">Voltar</button>
+        </div>
+
+        <!-- Aves -->
+        <div id="question-aves" style="display: none;">
+            <h2>É voadora?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-arara">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question-aves-no">Não</button>
+            <button class="backButton" data-prev="classSelection">Voltar</button>
+        </div>
+        <div id="question-aves-no" style="display: none;">
+            <h2>É não-voadora?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-pinguim">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question4-no">Não</button>
+            <button class="backButton" data-prev="question-aves">Voltar</button>
+        </div>
+        <div id="question4-no" style="display: none;">
+            <h2>É de rapina?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-aguia">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question4-no-no">Não</button>
+            <button class="backButton" data-prev="question-aves-no">Voltar</button>
+        </div>
+        <div id="question4-no-no" style="display: none;">
+            <h2>Então é nadadora?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-ganso">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-impossivel">Não</button>
+            <button class="backButton" data-prev="question4-no">Voltar</button>
+        </div>
+
+        <!-- Répteis -->
+        <div id="question-repteis" style="display: none;">
+            <h2>É escamado?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-iguana">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question-repteis-no">Não</button>
+            <button class="backButton" data-prev="classSelection">Voltar</button>
+        </div>
+        <div id="question-repteis-no" style="display: none;">
+            <h2>Possui casco?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-tartaruga">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question-repteis-no-no">Não</button>
+            <button class="backButton" data-prev="question-repteis">Voltar</button>
+        </div>
+        <div id="question-repteis-no-no" style="display: none;">
+            <h2>Então é carnívoro?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-jacare">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-impossivel">Não</button>
+            <button class="backButton" data-prev="question-repteis-no">Voltar</button>
+        </div>
+
+        <!-- Peixes -->
+        <div id="question-peixes" style="display: none;">
+            <h2>É cartilaginoso?</h2>
+            <button class="optionButton" data-value="yes" data-next="question-peixes-yes">Sim</button>
+            <button class="optionButton" data-value="no" data-next="question-peixes-no">Não</button>
+            <button class="backButton" data-prev="classSelection">Voltar</button>
+        </div>
+        <div id="question-peixes-yes" style="display: none;">
+            <h2>É carnivoro?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-tubarao">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-pacu">Não</button>
+            <button class="backButton" data-prev="question-peixes">Voltar</button>
+        </div>
+        <div id="question-peixes-no" style="display: none;">
+            <h2>É osseo?</h2>
+            <button class="optionButton" data-value="yes" data-next="result-atum">Sim</button>
+            <button class="optionButton" data-value="no" data-next="result-raia">Não</button>
+            <button class="backButton" data-prev="question-peixes">Voltar</button>
+        </div>
+
+        <!-- Resultados -->
+        <div id="result-raposa" style="display: none;">
+            <img src="./animais/raposa.png" alt="Descrição da imagem" width="300" height="300" title="raposa">
+            <h2>É uma raposa!</h2>
+            <button class="backButton" data-prev="question2-yes">Voltar</button>
+
+        </div>
+        <div id="result-guaxinim" style="display: none;">
+            <video class="rounded-video" width="300" height="200" controls>
+                <source src="./imagens/animais.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+            <h2>É um Guaxinim!</h2>
+            <button class="backButton" data-prev="question3-no">Voltar</button>
+        </div>
+        <div id="result-canguru" style="display: none;">
+            <img src="./animais/canguru.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É um canguru!</h2>
+            <button class="backButton" data-prev="question3-yes">Voltar</button>
+
+        </div>
+        <div id="result-arara" style="display: none;">
+            <img src="./animais/arara.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É uma arara!</h2>
+            <button class="backButton" data-prev="question-aves">Voltar</button>
+
+        </div>
+        <div id="result-pinguim" style="display: none;">
+            <img src="./animais/pinguim.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É um pinguim!</h2>
+            <button class="backButton" data-prev="question-aves-no">Voltar</button>
+
+        </div>
+        <div id="result-aguia" style="display: none;">
+            <img src="./imagens/águia.jpg" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É uma águia!</h2>
+            <button class="backButton" data-prev="question4-no">Voltar</button>
+
+        </div>
+        <div id="result-ganso" style="display: none;">
+            <img src="./animais/ganso.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É um ganso!</h2>
+            <button class="backButton" data-prev="question4-no-no">Voltar</button>
+
+        </div>
+        <div id="result-iguana" style="display: none;">
+            <img src="./animais/iguana.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>É uma iguana!</h2>
+            <button class="backButton" data-prev="question-repteis">Voltar</button>
+
+        </div>
+        <div id="result-tartaruga" style="display: none;">
+            <img src="./animais/tartaruga.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+            <h2>Tartaruga é o seu animal!</h2>
+            <button class="backButton" data-prev="question-repteis-no">Voltar</button>
+
+        </div>
+        <div id="result-jacare" style="display: none;">
+            <h2>Ótimo, é um jacaré!</h2>
+            <button class="backButton" data-prev="question-repteis-no-no">Voltar</button>
+            <img src="./animais/jacaré.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+
+        </div>
+        <div id="result-tubarao" style="display: none;">
+            <h2>É um tubarão!</h2>
+            <button class="backButton" data-prev="question-peixes-yes">Voltar</button>
+            <img src="./animais/tubarão.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+
+        </div>
+        <div id="result-pacu" style="display: none;">
+            <h2>É um pacu!</h2>
+            <button class="backButton" data-prev="question-peixes-yes">Voltar</button>
+            <img src="./animais/pacu.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+
+        </div>
+        <div id="result-atum" style="display: none;">
+            <h2>É um atum!</h2>
+            <button class="backButton" data-prev="question-peixes-no">Voltar</button>
+            <img src="./animais/atum.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+
+        </div>
+        <div id="result-raia" style="display: none;">
+            <h2>É uma raia!</h2>
+            <button class="backButton" data-prev="question-peixes-no">Voltar</button>
+            <img src="./animais/raia.png" alt="Descrição da imagem" width="300" height="300" title="Título da imagem">
+
+        </div>
+        <div id="result-impossivel" style="display: none;">
+            <h2>Impossível! Tente novamente.</h2>
+            <button class="backButton" data-prev="home">Voltar</button>
+
+
+        </div>
+    </div>
+    <footer>
+        <p>Desenvolvido por: Briena Bertoni, Heloisa de Morais, Jaqueline Neder e Vannília Lima</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
